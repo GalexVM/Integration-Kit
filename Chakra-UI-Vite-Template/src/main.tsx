@@ -4,6 +4,7 @@ import { App } from "./app";
 import dotenv from "dotenv";
 import { ChakraProvider } from "@chakra-ui/react";
 import { extendTheme } from "@chakra-ui/react";
+import Login from './pages/home/login';
 
 // Cargar variables de entorno desde el archivo .env
 dotenv.config();
@@ -20,6 +21,7 @@ const theme = extendTheme({ colors });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ChakraProvider theme={theme}>
+    <Login />
     <App />
   </ChakraProvider>
 );
