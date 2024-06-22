@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { web3Enable, web3Accounts } from '@polkadot/extension-dapp';
 import crypto from 'crypto-browserify';
-
+import { UploadCertificateReact } from './loader';
 const Login: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [account, setAccount] = useState<string | null>(null);
@@ -45,6 +45,14 @@ const Login: React.FC = () => {
       };
       reader.readAsArrayBuffer(file);
     }
+  };
+
+  const handleLoader = () => {
+    return (
+      <div>
+        <UploadCertificateReact />
+      </div>
+    );
   };
 
   const containerStyle = {
@@ -101,6 +109,9 @@ const Login: React.FC = () => {
               <p>{fileHash}</p>
             </div>
           )}
+          <div>
+            <button onClick={handleLoader} style={buttonStyle}>Enviar archivo</button>
+          </div>
         </div>
       ) : (
         <div style={cardStyle}>
@@ -114,4 +125,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login
+export default Login;

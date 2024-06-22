@@ -22,6 +22,5 @@ const theme = extendTheme({ colors });
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <ChakraProvider theme={theme}>
     <Login />
-    <App />
   </ChakraProvider>
 );
